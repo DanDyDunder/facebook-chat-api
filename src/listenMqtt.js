@@ -527,6 +527,9 @@ module.exports = function (defaultFuncs, api, ctx) {
       .then(utils.parseAndCheckLogin(ctx, defaultFuncs))
       .then((resData) => {
         console.log(resData);
+        console.log(resData[resData.length - 1]);
+        console.log(resData.json());
+        console.log(JSON.stringify(resData.json()));
         if (resData && resData.length > 0 && resData[resData.length - 1].error_results > 0) {
           throw resData[0].o0.errors;
         }
