@@ -1040,7 +1040,7 @@ function parseAndCheckLogin(ctx, defaultFuncs, retryCount) {
             .then(parseAndCheckLogin(ctx, defaultFuncs, retryCount));
         }
       }
-      console.log(data);
+      console.log(JSON.stringify(data));
       if (data.statusCode !== 200)
         throw new Error(
           "parseAndCheckLogin got status code: " +
