@@ -526,6 +526,7 @@ module.exports = function (defaultFuncs, api, ctx) {
       .post("https://www.facebook.com/api/graphqlbatch/", ctx.jar, form)
       .then(utils.parseAndCheckLogin(ctx, defaultFuncs))
       .then((resData) => {
+        console.log(resData);
         if (resData && resData.length > 0 && resData[resData.length - 1].error_results > 0) {
           throw resData[0].o0.errors;
         }
